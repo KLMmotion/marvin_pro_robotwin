@@ -1,0 +1,10 @@
+#usda 1.0
+(
+    defaultPrim = "marvin_robot"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "marvin_robot"
+{
+}

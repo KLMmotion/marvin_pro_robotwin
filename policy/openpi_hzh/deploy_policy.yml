@@ -1,0 +1,17 @@
+# Basic experiment configuration (keep unchanged)
+policy_name: openpi_hzh
+task_name: null
+task_config: null
+ckpt_setting: null
+seed: null
+instruction_type: unseen
+
+# OpenPI websocket policy server settings.
+use_websocket: true
+remote_host: localhost
+remote_port: 8000
+openpi_repo_root: /home/tianji/hzh/study/openpi
+action_type: ee
+openpi_step: 8
+image_key_style: generic
+arm_order: left_right

@@ -1,0 +1,17 @@
+# Basic experiment configuration (keep unchanged)
+policy_name: smolvla_hzh
+task_name: null
+task_config: null
+ckpt_setting: null
+seed: null
+instruction_type: unseen
+
+# Add Parameters You Need
+use_websocket: true
+remote_host: localhost
+remote_port: 8000
+openpi_repo_root: /home/tianji/hzh/study/openpi
+action_type: ee
+smolvla_step: 50
+image_key_style: generic
+arm_order: left_right

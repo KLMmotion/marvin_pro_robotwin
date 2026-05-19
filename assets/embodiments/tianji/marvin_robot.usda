@@ -1,0 +1,54 @@
+#usda 1.0
+(
+    defaultPrim = "marvin_robot"
+    metersPerUnit = 1
+    upAxis = "Z"
+)
+
+def Xform "marvin_robot" (
+    variants = {
+        string Physics = "PhysX"
+        string Robot = "Robot"
+        string Sensor = "Sensors"
+    }
+    prepend variantSets = ["Physics", "Sensor", "Robot"]
+)
+{
+    variantSet "Physics" = {
+        "None" (
+            prepend references = @configuration/marvin_robot_base.usda@
+        ) {
+            over "joints" (
+                active = false
+            )
+            {
+            }
+
+        }
+        "PhysX" (
+            prepend payload = @configuration/marvin_robot_physics.usda@
+        ) {
+
+        }
+    }
+    variantSet "Sensor" = {
+        "None" {
+
+        }
+        "Sensors" (
+            prepend payload = @configuration/marvin_robot_sensor.usda@
+        ) {
+
+        }
+    }
+    variantSet "Robot" = {
+        "None" {
+
+        }
+        "Robot" (
+            prepend payload = @configuration/marvin_robot_robot.usda@
+        ) {
+
+        }
+    }
+}

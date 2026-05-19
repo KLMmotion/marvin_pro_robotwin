@@ -1,0 +1,101 @@
+robot_cfg:
+  kinematics:
+    urdf_path: ${ASSETS_PATH}/assets/embodiments/tianji/marvin_robot.urdf
+    base_link: "base_link"
+    ee_link: "left_tool"
+    collision_link_names:
+      [
+        "Base_L",
+        "Link1_L",
+        "Link2_L",
+        "Link3_L",
+        "Link4_L",
+        "Link5_L",
+        "Link6_L",
+        "Link7_L",
+        "left_gripper_base",
+        "left_gripper_left_finger",
+        "left_gripper_right_finger",
+      ]
+    collision_spheres: ${ASSETS_PATH}/assets/embodiments/tianji/collision_left.yml
+    collision_sphere_buffer: 0.002
+    self_collision_ignore:
+      {
+        "Base_L": [
+          "Link1_L",
+          "Link2_L",
+          "Base_R"
+        ],
+        "Link1_L": [
+          "Link2_L"
+        ],
+        "Link2_L": [
+          "Link3_L"
+        ],
+        "Link3_L": [
+          "Link4_L"
+        ],
+        "Link4_L": [
+          "Link5_L",
+          "left_gripper_left_finger"
+        ],
+        "Link5_L": [
+          "Link6_L",
+          "Link7_L",
+          "left_gripper_base",
+          "left_gripper_left_finger",
+          "left_gripper_right_finger"
+        ],
+        "Link6_L": [
+          "Link7_L"
+        ],
+        "Link7_L": [
+          "left_gripper_base"
+        ],
+        "left_gripper_base": [
+          "left_gripper_left_finger",
+          "left_gripper_right_finger"
+        ]
+      }
+    self_collision_buffer:
+      {
+        "Link4_L": -0.002,
+        "left_gripper_left_finger": -0.002,
+        "left_gripper_right_finger": -0.002
+      }
+    mesh_link_names:
+      [
+        "Base_L",
+        "Link1_L",
+        "Link2_L",
+        "Link3_L",
+        "Link4_L",
+        "Link5_L",
+        "Link6_L",
+        "Link7_L",
+        "left_gripper_base",
+        "left_gripper_left_finger",
+        "left_gripper_right_finger"
+      ]
+    lock_joints:
+      {
+        "left_gripper_left_finger_joint": 0.0,
+      }
+    cspace:
+      joint_names:
+        [
+          "Joint1_L",
+          "Joint2_L",
+          "Joint3_L",
+          "Joint4_L",
+          "Joint5_L",
+          "Joint6_L",
+          "Joint7_L"
+        ]
+      retract_config: [1.7942, -0.9983, -1.0018, -2.0944, -0.2705, -0.0977, 0.6894]
+      null_space_weight: [1, 1, 1, 1, 1, 1, 1]
+      cspace_distance_weight: [1, 1, 1, 1, 1, 1, 1]
+      max_acceleration: 15.0
+      max_jerk: 500.0
+planner:
+  frame_bias: [0., 0., 0.]

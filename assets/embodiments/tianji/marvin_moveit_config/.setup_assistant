@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: marvin_robot
+    relative_path: marvin_robot.urdf
+  srdf:
+    relative_path: config/marvin_robot.srdf
+  package_settings:
+    author_name: Tianji
+    author_email: 1525826624@qq.com
+    generated_timestamp: 1776932518

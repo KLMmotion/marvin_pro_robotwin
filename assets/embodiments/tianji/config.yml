@@ -1,0 +1,58 @@
+urdf_path: "./marvin_robot.urdf"
+srdf_path: "./marvin_moveit_config/config/marvin_robot.srdf"
+joint_stiffness: 800
+joint_damping: 40
+gripper_stiffness: 1000
+gripper_damping: 1.8
+use_virtual_wrist_camera: false
+wrist_camera_pose:
+  left:
+    parent: "left_tool"
+    xyz: [0.0112, 0.0437, 0.0310]
+    rpy: [1.8757, 0.0205, 1.5576]
+  right:
+    parent: "right_tool"
+    xyz: [0.0115, 0.0442, 0.0306]
+    rpy: [1.9092, 0.0035, -1.5707]
+move_group: ["left_tool", "right_tool"]
+ee_joints: ["left_gripper_base_to_left_tool", "right_gripper_base_to_right_tool"]
+arm_joints_name: [["Joint1_L", "Joint2_L", "Joint3_L", "Joint4_L", "Joint5_L", "Joint6_L", "Joint7_L"],
+                  ["Joint1_R", "Joint2_R", "Joint3_R", "Joint4_R", "Joint5_R", "Joint6_R", "Joint7_R"]]
+gripper_name:
+  - base: "left_gripper_left_finger_joint"
+    mimic: [["left_gripper_right_finger_joint", 1.0, 0.0]]
+  - base: "right_gripper_left_finger_joint"
+    mimic: [["right_gripper_right_finger_joint", 1.0, 0.0]]
+gripper_bias: 0.04
+gripper_scale: [0.05, 0.0]
+homestate: [[1.7942, -0.9983, -1.0018, -2.0944, -0.2705, -0.0977, 0.6894],
+            [-1.7942, -0.9983, 1.0018, -2.0944, 0.2705, -0.0977, -0.6894]]
+delta_matrix: [[0,1,0],[0,0,1],[1,0,0]]
+global_trans_matrix: [[1,0,0],[0,-1,0],[0,0,-1]]
+robot_pose: [[0, -0.65, 0.02, 0.707, 0, 0, 0.707]]
+planner: "curobo"
+dual_arm: True
+plan_from_drive_target: True
+disable_self_collision: False
+disable_collision_pairs:
+  - ["Link5_L", "Link6_L"]
+  - ["Link5_L", "Link7_L"]
+  - ["Link5_L", "left_gripper_base"]
+  - ["Link5_L", "left_gripper_left_finger"]
+  - ["Link5_L", "left_gripper_right_finger"]
+  - ["Link5_R", "Link6_R"]
+  - ["Link5_R", "Link7_R"]
+  - ["Link5_R", "right_gripper_base"]
+  - ["Link5_R", "right_gripper_left_finger"]
+  - ["Link5_R", "right_gripper_right_finger"]
+  - ["left_gripper_base", "Link7_L"]
+  - ["right_gripper_base", "Link7_R"]
+  - ["left_gripper_left_finger", "left_gripper_right_finger"]
+  - ["right_gripper_left_finger", "right_gripper_right_finger"]
+rotate_lim: [0.1, 0.8]
+grasp_perfect_direction: ['right', 'left']
+static_camera_list: 
+- name: head_camera
+  position: [0.078, -0.45, 1.25]
+  forward: [0, 0.6, -0.8]
+  left: [-1, 0, 0]

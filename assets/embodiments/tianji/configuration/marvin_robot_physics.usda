@@ -1,0 +1,1024 @@
+#usda 1.0
+(
+    defaultPrim = "marvin_robot"
+    metersPerUnit = 1
+    subLayers = [
+        @marvin_robot_base.usda@
+    ]
+    upAxis = "Z"
+)
+
+def PhysicsScene "physicsScene"
+{
+    vector3f physics:gravityDirection = (0, 0, -1)
+    float physics:gravityMagnitude = 9.81
+}
+
+over "marvin_robot" (
+    prepend apiSchemas = ["PhysicsArticulationRootAPI"]
+)
+{
+    over "base_link" (
+        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+    )
+    {
+        float physics:mass = 18.846
+        float3 physics:centerOfMass = (0.008199, -0.000005, 0.47835)
+        float3 physics:diagonalInertia = (0.463463, 0.46325, 0.377657)
+        quatf physics:principalAxes = (0.999994, 0.000037, 0.003136, 0.001737)
+        over "collisions"
+        {
+            over "collision_0" (
+                prepend apiSchemas = ["PhysicsCollisionAPI"]
+            )
+            {
+                bool physics:collisionEnabled = true
+            }
+        }
+        over "tracking_base_link" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        )
+        {
+            float physics:mass = 0
+            float3 physics:centerOfMass = (0, 0, 0)
+            float3 physics:diagonalInertia = (0, 0, 0)
+            quatf physics:principalAxes = (1, 0, 0, 0)
+        }
+        over "Base_L" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        )
+        {
+            float physics:mass = 1.1962
+            float3 physics:centerOfMass = (0.000323, 0.000048, 0.040663)
+            float3 physics:diagonalInertia = (0.001274, 0.001074, 0.001069)
+            quatf physics:principalAxes = (0.668655, 0.163764, -0.701568, -0.184074)
+            over "collisions"
+            {
+                over "collision_0" (
+                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    bool physics:collisionEnabled = true
+                    uniform token physics:approximation = "convexHull"
+                }
+            }
+            over "Link1_L" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+            )
+            {
+                float physics:mass = 1.9705
+                float3 physics:centerOfMass = (0.000023, 0.005572, -0.03076)
+                float3 physics:diagonalInertia = (0.005298, 0.004923, 0.001849)
+                quatf physics:principalAxes = (0.711634, -0.033645, -0.034884, 0.700877)
+                over "collisions"
+                {
+                    over "collision_0" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                    )
+                    {
+                        bool physics:collisionEnabled = true
+                        uniform token physics:approximation = "convexHull"
+                    }
+                }
+                over "Link2_L" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    float physics:mass = 2.24398
+                    float3 physics:centerOfMass = (0.000135, 0.061705, 0.009506)
+                    float3 physics:diagonalInertia = (0.011949, 0.011216, 0.003384)
+                    quatf physics:principalAxes = (0.643375, 0.765551, -0.000284, -0.000086)
+                    over "collisions"
+                    {
+                        over "collision_0" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                        )
+                        {
+                            bool physics:collisionEnabled = true
+                            uniform token physics:approximation = "convexHull"
+                        }
+                    }
+                    over "Link3_L" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                    )
+                    {
+                        float physics:mass = 1.9242
+                        float3 physics:centerOfMass = (0.009686, 0.002466, -0.046273)
+                        float3 physics:diagonalInertia = (0.007652, 0.007308, 0.001634)
+                        quatf physics:principalAxes = (0.779187, -0.079707, 0.01786, 0.621447)
+                        over "collisions"
+                        {
+                            over "collision_0" (
+                                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                            )
+                            {
+                                bool physics:collisionEnabled = true
+                                uniform token physics:approximation = "convexHull"
+                            }
+                        }
+                        over "Link4_L" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                        )
+                        {
+                            float physics:mass = 1.6085
+                            float3 physics:centerOfMass = (0.008504, -0.047182, 0.009415)
+                            float3 physics:diagonalInertia = (0.006032, 0.005359, 0.001982)
+                            quatf physics:principalAxes = (0.77326, 0.589511, 0.231817, 0.028401)
+                            over "collisions"
+                            {
+                                over "collision_0" (
+                                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                )
+                                {
+                                    bool physics:collisionEnabled = true
+                                    uniform token physics:approximation = "convexHull"
+                                }
+                            }
+                            over "Link5_L" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                            )
+                            {
+                                float physics:mass = 2.0883
+                                float3 physics:centerOfMass = (0.000511, 0.001011, -0.112717)
+                                float3 physics:diagonalInertia = (0.006269, 0.005643, 0.002434)
+                                quatf physics:principalAxes = (0.999434, -0.010355, -0.006121, 0.03143)
+                                over "collisions"
+                                {
+                                    over "collision_0" (
+                                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                                    )
+                                    {
+                                        bool physics:collisionEnabled = true
+                                    }
+                                }
+                                over "Link6_L" (
+                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                )
+                                {
+                                    float physics:mass = 0.72496
+                                    float3 physics:centerOfMass = (0.000327, 0.005313, -0.000302)
+                                    float3 physics:diagonalInertia = (0.000517, 0.00046, 0.000425)
+                                    quatf physics:principalAxes = (0.718534, 0.003341, 0.022662, 0.695115)
+                                    over "collisions"
+                                    {
+                                        over "collision_0" (
+                                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                        )
+                                        {
+                                            bool physics:collisionEnabled = true
+                                            uniform token physics:approximation = "convexHull"
+                                        }
+                                    }
+                                    over "Link7_L" (
+                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                    )
+                                    {
+                                        float physics:mass = 0.68606
+                                        float3 physics:centerOfMass = (-0.000091, -0.031532, 0.008894)
+                                        float3 physics:diagonalInertia = (0.001737, 0.001539, 0.000745)
+                                        quatf physics:principalAxes = (0.844832, 0.534992, 0.006493, -0.000531)
+                                        over "collisions"
+                                        {
+                                            over "collision_0" (
+                                                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                            )
+                                            {
+                                                bool physics:collisionEnabled = true
+                                                uniform token physics:approximation = "convexHull"
+                                            }
+                                        }
+                                        over "flange_L" (
+                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                        )
+                                        {
+                                            float physics:mass = 0
+                                            float3 physics:centerOfMass = (0, 0, 0)
+                                            float3 physics:diagonalInertia = (0, 0, 0)
+                                            quatf physics:principalAxes = (1, 0, 0, 0)
+                                            over "left_gripper_mount" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                            )
+                                            {
+                                                float physics:mass = 0
+                                                float3 physics:centerOfMass = (0, 0, 0)
+                                                float3 physics:diagonalInertia = (0, 0, 0)
+                                                quatf physics:principalAxes = (1, 0, 0, 0)
+                                                over "left_gripper_base" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    float physics:mass = 0.406427
+                                                    float3 physics:centerOfMass = (-0.000142, 0.005641, 0.048881)
+                                                    float3 physics:diagonalInertia = (0.00055, 0.000405, 0.000298)
+                                                    quatf physics:principalAxes = (0.285146, 0.651872, 0.28087, 0.644101)
+                                                    over "collisions"
+                                                    {
+                                                        over "collision_0" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            bool physics:collisionEnabled = true
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                    over "left_gripper_left_finger" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        float physics:mass = 0.031395
+                                                        float3 physics:centerOfMass = (-0.016675, -0.002811, 0.012705)
+                                                        float3 physics:diagonalInertia = (0.000012, 0.00001, 0.000005)
+                                                        quatf physics:principalAxes = (0.704162, 0.704162, 0.064469, 0.064469)
+                                                        over "collisions"
+                                                        {
+                                                            over "collision_0" (
+                                                                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                                            )
+                                                            {
+                                                                bool physics:collisionEnabled = true
+                                                                uniform token physics:approximation = "convexHull"
+                                                            }
+                                                        }
+                                                    }
+                                                    over "left_gripper_right_finger" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        float physics:mass = 0.031395
+                                                        float3 physics:centerOfMass = (0.008929, -0.002811, 0.012705)
+                                                        float3 physics:diagonalInertia = (0.000012, 0.00001, 0.000005)
+                                                        quatf physics:principalAxes = (0.704162, 0.704162, 0.064469, 0.064469)
+                                                        over "collisions"
+                                                        {
+                                                            over "collision_0" (
+                                                                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                                            )
+                                                            {
+                                                                bool physics:collisionEnabled = true
+                                                                uniform token physics:approximation = "convexHull"
+                                                            }
+                                                        }
+                                                    }
+                                                    over "left_tool" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        float physics:mass = 0
+                                                        float3 physics:centerOfMass = (0, 0, 0)
+                                                        float3 physics:diagonalInertia = (0, 0, 0)
+                                                        quatf physics:principalAxes = (1, 0, 0, 0)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        over "Base_R" (
+            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+        )
+        {
+            float physics:mass = 1.1962
+            float3 physics:centerOfMass = (0.000323, 0.000048, 0.040663)
+            float3 physics:diagonalInertia = (0.001274, 0.001074, 0.001069)
+            quatf physics:principalAxes = (0.668655, 0.163764, -0.701568, -0.184074)
+            over "collisions"
+            {
+                over "collision_0" (
+                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                )
+                {
+                    bool physics:collisionEnabled = true
+                    uniform token physics:approximation = "convexHull"
+                }
+            }
+            over "Link1_R" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+            )
+            {
+                float physics:mass = 1.9705
+                float3 physics:centerOfMass = (0.000023, 0.005572, -0.03076)
+                float3 physics:diagonalInertia = (0.005298, 0.004923, 0.001849)
+                quatf physics:principalAxes = (0.711634, -0.033645, -0.034884, 0.700877)
+                over "collisions"
+                {
+                    over "collision_0" (
+                        prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                    )
+                    {
+                        bool physics:collisionEnabled = true
+                        uniform token physics:approximation = "convexHull"
+                    }
+                }
+                over "Link2_R" (
+                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                )
+                {
+                    float physics:mass = 2.24398
+                    float3 physics:centerOfMass = (0.000135, 0.061705, 0.009506)
+                    float3 physics:diagonalInertia = (0.011949, 0.011216, 0.003384)
+                    quatf physics:principalAxes = (0.643375, 0.765551, -0.000284, -0.000086)
+                    over "collisions"
+                    {
+                        over "collision_0" (
+                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                        )
+                        {
+                            bool physics:collisionEnabled = true
+                            uniform token physics:approximation = "convexHull"
+                        }
+                    }
+                    over "Link3_R" (
+                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                    )
+                    {
+                        float physics:mass = 1.9242
+                        float3 physics:centerOfMass = (0.009686, 0.002466, -0.046273)
+                        float3 physics:diagonalInertia = (0.007652, 0.007308, 0.001634)
+                        quatf physics:principalAxes = (0.779187, -0.079707, 0.01786, 0.621447)
+                        over "collisions"
+                        {
+                            over "collision_0" (
+                                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                            )
+                            {
+                                bool physics:collisionEnabled = true
+                                uniform token physics:approximation = "convexHull"
+                            }
+                        }
+                        over "Link4_R" (
+                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                        )
+                        {
+                            float physics:mass = 1.6085
+                            float3 physics:centerOfMass = (0.008504, -0.047182, 0.009415)
+                            float3 physics:diagonalInertia = (0.006032, 0.005359, 0.001982)
+                            quatf physics:principalAxes = (0.77326, 0.589511, 0.231817, 0.028401)
+                            over "collisions"
+                            {
+                                over "collision_0" (
+                                    prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                )
+                                {
+                                    bool physics:collisionEnabled = true
+                                    uniform token physics:approximation = "convexHull"
+                                }
+                            }
+                            over "Link5_R" (
+                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                            )
+                            {
+                                float physics:mass = 2.0883
+                                float3 physics:centerOfMass = (-0.000511, -0.001011, -0.112717)
+                                float3 physics:diagonalInertia = (0.006269, 0.005643, 0.002434)
+                                quatf physics:principalAxes = (0.999434, 0.010355, 0.006121, 0.03143)
+                                over "collisions"
+                                {
+                                    over "collision_0" (
+                                        prepend apiSchemas = ["PhysicsCollisionAPI"]
+                                    )
+                                    {
+                                        bool physics:collisionEnabled = true
+                                    }
+                                }
+                                over "Link6_R" (
+                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                )
+                                {
+                                    float physics:mass = 0.72496
+                                    float3 physics:centerOfMass = (0.000327, -0.005313, 0.000302)
+                                    float3 physics:diagonalInertia = (0.000517, 0.00046, 0.000425)
+                                    quatf physics:principalAxes = (0.695115, 0.022662, 0.003341, 0.718534)
+                                    over "collisions"
+                                    {
+                                        over "collision_0" (
+                                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                        )
+                                        {
+                                            bool physics:collisionEnabled = true
+                                            uniform token physics:approximation = "convexHull"
+                                        }
+                                    }
+                                    over "Link7_R" (
+                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                    )
+                                    {
+                                        float physics:mass = 0.68606
+                                        float3 physics:centerOfMass = (-0.000091, -0.031532, 0.008894)
+                                        float3 physics:diagonalInertia = (0.001737, 0.001539, 0.000745)
+                                        quatf physics:principalAxes = (0.844832, 0.534992, 0.006493, -0.000531)
+                                        over "collisions"
+                                        {
+                                            over "collision_0" (
+                                                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                            )
+                                            {
+                                                bool physics:collisionEnabled = true
+                                                uniform token physics:approximation = "convexHull"
+                                            }
+                                        }
+                                        over "flange_R" (
+                                            prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                        )
+                                        {
+                                            float physics:mass = 0
+                                            float3 physics:centerOfMass = (0, 0, 0)
+                                            float3 physics:diagonalInertia = (0, 0, 0)
+                                            quatf physics:principalAxes = (1, 0, 0, 0)
+                                            over "right_gripper_mount" (
+                                                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                            )
+                                            {
+                                                float physics:mass = 0
+                                                float3 physics:centerOfMass = (0, 0, 0)
+                                                float3 physics:diagonalInertia = (0, 0, 0)
+                                                quatf physics:principalAxes = (1, 0, 0, 0)
+                                                over "right_gripper_base" (
+                                                    prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                )
+                                                {
+                                                    float physics:mass = 0.406427
+                                                    float3 physics:centerOfMass = (-0.000142, 0.005641, 0.048881)
+                                                    float3 physics:diagonalInertia = (0.00055, 0.000405, 0.000298)
+                                                    quatf physics:principalAxes = (0.285146, 0.651872, 0.28087, 0.644101)
+                                                    over "collisions"
+                                                    {
+                                                        over "collision_0" (
+                                                            prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                                        )
+                                                        {
+                                                            bool physics:collisionEnabled = true
+                                                            uniform token physics:approximation = "convexHull"
+                                                        }
+                                                    }
+                                                    over "right_gripper_left_finger" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        float physics:mass = 0.031395
+                                                        float3 physics:centerOfMass = (-0.016675, -0.002811, 0.012705)
+                                                        float3 physics:diagonalInertia = (0.000012, 0.00001, 0.000005)
+                                                        quatf physics:principalAxes = (0.704162, 0.704162, 0.064469, 0.064469)
+                                                        over "collisions"
+                                                        {
+                                                            over "collision_0" (
+                                                                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                                            )
+                                                            {
+                                                                bool physics:collisionEnabled = true
+                                                                uniform token physics:approximation = "convexHull"
+                                                            }
+                                                        }
+                                                    }
+                                                    over "right_gripper_right_finger" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        float physics:mass = 0.031395
+                                                        float3 physics:centerOfMass = (0.008929, -0.002811, 0.012705)
+                                                        float3 physics:diagonalInertia = (0.000012, 0.00001, 0.000005)
+                                                        quatf physics:principalAxes = (0.704162, 0.704162, 0.064469, 0.064469)
+                                                        over "collisions"
+                                                        {
+                                                            over "collision_0" (
+                                                                prepend apiSchemas = ["PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                                                            )
+                                                            {
+                                                                bool physics:collisionEnabled = true
+                                                                uniform token physics:approximation = "convexHull"
+                                                            }
+                                                        }
+                                                    }
+                                                    over "right_tool" (
+                                                        prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI"]
+                                                    )
+                                                    {
+                                                        float physics:mass = 0
+                                                        float3 physics:centerOfMass = (0, 0, 0)
+                                                        float3 physics:diagonalInertia = (0, 0, 0)
+                                                        quatf physics:principalAxes = (1, 0, 0, 0)
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    over "joints"
+    {
+        def PhysicsFixedJoint "base_link_to_tracking_base_link"
+        {
+            rel physics:body0 = </marvin_robot/base_link>
+            rel physics:body1 = </marvin_robot/base_link/tracking_base_link>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (0, 0, -0.1)
+            custom point3f urdf:originXyz = (0, 0, -0.1)
+            custom quatf urdf:originQuatWxyz = (1, 0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "base_link_to_Base_L"
+        {
+            rel physics:body0 = </marvin_robot/base_link>
+            rel physics:body1 = </marvin_robot/base_link/Base_L>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (0, 0.026, 1.121)
+            custom point3f urdf:originXyz = (0, 0.026, 1.121)
+            custom quatf urdf:originQuatWxyz = (0.707388, -0.706825, 0, 0)
+            quatf physics:localRot0 = (0.707388, -0.706825, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint1_L"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_L>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -178.000798
+            float physics:upperLimit = 178.000798
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 3
+            float drive:angular:physics:maxForce = 108
+            point3f physics:localPos0 = (0, 0, 0.1745)
+            custom point3f urdf:originXyz = (0, 0, 0.1745)
+            custom quatf urdf:originQuatWxyz = (1, 0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint2_L"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -120.000281
+            float physics:upperLimit = -5.729578
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 3
+            float drive:angular:physics:maxForce = 108
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.707105, 0.707108, 0, 0)
+            quatf physics:localRot0 = (0.707105, 0.707108, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint3_L"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -178.000798
+            float physics:upperLimit = 178.000798
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 2.5
+            float drive:angular:physics:maxForce = 66
+            point3f physics:localPos0 = (0, 0.287, 0)
+            custom point3f urdf:originXyz = (0, 0.287, 0)
+            custom quatf urdf:originQuatWxyz = (0.707105, -0.707108, 0, 0)
+            quatf physics:localRot0 = (0.707105, -0.707108, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint4_L"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -144.998429
+            float physics:upperLimit = -5.729578
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 2.5
+            float drive:angular:physics:maxForce = 66
+            point3f physics:localPos0 = (0.018, 0, 0)
+            custom point3f urdf:originXyz = (0.018, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.000003, -0.000003, 0.707108, -0.707105)
+            quatf physics:localRot0 = (0.000003, -0.000003, 0.707108, -0.707105)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint5_L"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -178.000798
+            float physics:upperLimit = 178.000798
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 1.5
+            float drive:angular:physics:maxForce = 18
+            point3f physics:localPos0 = (0.018, -0.314, 0)
+            custom point3f urdf:originXyz = (0.018, -0.314, 0)
+            custom quatf urdf:originQuatWxyz = (0.000003, -0.000003, 0.707108, -0.707105)
+            quatf physics:localRot0 = (0.000003, -0.000003, 0.707108, -0.707105)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint6_L"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -60.00014
+            float physics:upperLimit = 60.00014
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 1.2
+            float drive:angular:physics:maxForce = 18
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.5, 0.5, -0.499998, 0.500002)
+            quatf physics:localRot0 = (0.5, 0.5, -0.499998, 0.500002)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint7_L"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -90.00021
+            float physics:upperLimit = 90.00021
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 1.2
+            float drive:angular:physics:maxForce = 18
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.5, 0.5, -0.499998, 0.500002)
+            quatf physics:localRot0 = (0.5, 0.5, -0.499998, 0.500002)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "Link7_L_to_flange_L"
+        {
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (0, -0.088, 0)
+            custom point3f urdf:originXyz = (0, -0.088, 0)
+            custom quatf urdf:originQuatWxyz = (0.5, 0.5, -0.499998, 0.500002)
+            quatf physics:localRot0 = (0.5, 0.5, -0.499998, 0.500002)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "flange_L_to_left_gripper_mount"
+        {
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L/left_gripper_mount>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.707107, 0, 0, -0.707107)
+            quatf physics:localRot0 = (0.707107, 0, 0, -0.707107)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "left_gripper_mount_to_left_gripper_base"
+        {
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L/left_gripper_mount>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L/left_gripper_mount/left_gripper_base>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (1, 0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsPrismaticJoint "left_gripper_left_finger_joint"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:linear"]
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L/left_gripper_mount/left_gripper_base>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L/left_gripper_mount/left_gripper_base/left_gripper_left_finger>
+            uniform token physics:axis = "X"
+            custom string urdf:jointType = "prismatic"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0.05
+            uniform token drive:linear:physics:type = "force"
+            float drive:linear:physics:damping = 8
+            float drive:linear:physics:maxForce = 30
+            point3f physics:localPos0 = (0.051688, -0.042108, 0.091637)
+            custom point3f urdf:originXyz = (0.051688, -0.042108, 0.091637)
+            custom quatf urdf:originQuatWxyz = (0.0061, 0.002527, -0.382675, -0.923859)
+            quatf physics:localRot0 = (0.0061, 0.002527, -0.382675, -0.923859)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsPrismaticJoint "left_gripper_right_finger_joint"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:linear"]
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L/left_gripper_mount/left_gripper_base>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L/left_gripper_mount/left_gripper_base/left_gripper_right_finger>
+            uniform token physics:axis = "X"
+            custom string urdf:jointType = "prismatic"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0.05
+            uniform token drive:linear:physics:type = "force"
+            float drive:linear:physics:damping = 8
+            point3f physics:localPos0 = (-0.07508, -0.026103, 0.109315)
+            custom point3f urdf:originXyz = (-0.07508, -0.026103, 0.109315)
+            custom quatf urdf:originQuatWxyz = (0.382675, 0.923859, 0.006101, 0.002527)
+            quatf physics:localRot0 = (0.382675, 0.923859, 0.006101, 0.002527)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "left_gripper_base_to_left_tool"
+        {
+            rel physics:body0 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L/left_gripper_mount/left_gripper_base>
+            rel physics:body1 = </marvin_robot/base_link/Base_L/Link1_L/Link2_L/Link3_L/Link4_L/Link5_L/Link6_L/Link7_L/flange_L/left_gripper_mount/left_gripper_base/left_tool>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (-0.011696, -0.034106, 0.100476)
+            custom point3f urdf:originXyz = (-0.011696, -0.034106, 0.100476)
+            custom quatf urdf:originQuatWxyz = (1, 0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "base_link_to_Base_R"
+        {
+            rel physics:body0 = </marvin_robot/base_link>
+            rel physics:body1 = </marvin_robot/base_link/Base_R>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (0, -0.026, 1.121)
+            custom point3f urdf:originXyz = (0, -0.026, 1.121)
+            custom quatf urdf:originQuatWxyz = (0.707388, 0.706825, 0, 0)
+            quatf physics:localRot0 = (0.707388, 0.706825, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint1_R"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_R>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -178.000798
+            float physics:upperLimit = 178.000798
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 3
+            float drive:angular:physics:maxForce = 108
+            point3f physics:localPos0 = (0, 0, 0.1745)
+            custom point3f urdf:originXyz = (0, 0, 0.1745)
+            custom quatf urdf:originQuatWxyz = (1, 0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint2_R"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -120.000281
+            float physics:upperLimit = -5.729578
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 3
+            float drive:angular:physics:maxForce = 108
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.707105, 0.707108, 0, 0)
+            quatf physics:localRot0 = (0.707105, 0.707108, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint3_R"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -178.000798
+            float physics:upperLimit = 178.000798
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 2.5
+            float drive:angular:physics:maxForce = 66
+            point3f physics:localPos0 = (0, 0.287, 0)
+            custom point3f urdf:originXyz = (0, 0.287, 0)
+            custom quatf urdf:originQuatWxyz = (0.707105, -0.707108, 0, 0)
+            quatf physics:localRot0 = (0.707105, -0.707108, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint4_R"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -144.998429
+            float physics:upperLimit = -5.729578
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 2.5
+            float drive:angular:physics:maxForce = 66
+            point3f physics:localPos0 = (0.018, 0, 0)
+            custom point3f urdf:originXyz = (0.018, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.000003, -0.000003, 0.707108, -0.707105)
+            quatf physics:localRot0 = (0.000003, -0.000003, 0.707108, -0.707105)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint5_R"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -178.000798
+            float physics:upperLimit = 178.000798
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 1.5
+            float drive:angular:physics:maxForce = 18
+            point3f physics:localPos0 = (0.018, -0.314, 0)
+            custom point3f urdf:originXyz = (0.018, -0.314, 0)
+            custom quatf urdf:originQuatWxyz = (0.000003, -0.000003, 0.707108, -0.707105)
+            quatf physics:localRot0 = (0.000003, -0.000003, 0.707108, -0.707105)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint6_R"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -60.00014
+            float physics:upperLimit = 60.00014
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 1.2
+            float drive:angular:physics:maxForce = 18
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.5, 0.5, -0.499998, 0.500002)
+            quatf physics:localRot0 = (0.5, 0.5, -0.499998, 0.500002)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsRevoluteJoint "Joint7_R"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:angular"]
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R>
+            uniform token physics:axis = "Z"
+            custom string urdf:jointType = "revolute"
+            custom float3 urdf:axisLocal = (0, 0, 1)
+            float physics:lowerLimit = -90.00021
+            float physics:upperLimit = 90.00021
+            uniform token drive:angular:physics:type = "force"
+            float drive:angular:physics:damping = 1.2
+            float drive:angular:physics:maxForce = 18
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.5, 0.5, -0.499998, 0.500002)
+            quatf physics:localRot0 = (0.5, 0.5, -0.499998, 0.500002)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "Link7_R_to_flange_R"
+        {
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (0, -0.088, 0)
+            custom point3f urdf:originXyz = (0, -0.088, 0)
+            custom quatf urdf:originQuatWxyz = (0.5, 0.5, -0.499998, 0.500002)
+            quatf physics:localRot0 = (0.5, 0.5, -0.499998, 0.500002)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "flange_R_to_right_gripper_mount"
+        {
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R/right_gripper_mount>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (0.707107, 0, 0, -0.707107)
+            quatf physics:localRot0 = (0.707107, 0, 0, -0.707107)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "right_gripper_mount_to_right_gripper_base"
+        {
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R/right_gripper_mount>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R/right_gripper_mount/right_gripper_base>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (0, 0, 0)
+            custom point3f urdf:originXyz = (0, 0, 0)
+            custom quatf urdf:originQuatWxyz = (1, 0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsPrismaticJoint "right_gripper_left_finger_joint"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:linear"]
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R/right_gripper_mount/right_gripper_base>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R/right_gripper_mount/right_gripper_base/right_gripper_left_finger>
+            uniform token physics:axis = "X"
+            custom string urdf:jointType = "prismatic"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0.05
+            uniform token drive:linear:physics:type = "force"
+            float drive:linear:physics:damping = 8
+            float drive:linear:physics:maxForce = 30
+            point3f physics:localPos0 = (0.051688, -0.042108, 0.091637)
+            custom point3f urdf:originXyz = (0.051688, -0.042108, 0.091637)
+            custom quatf urdf:originQuatWxyz = (0.0061, 0.002527, -0.382675, -0.923859)
+            quatf physics:localRot0 = (0.0061, 0.002527, -0.382675, -0.923859)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsPrismaticJoint "right_gripper_right_finger_joint"
+        {
+            prepend apiSchemas = ["PhysicsDriveAPI:linear"]
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R/right_gripper_mount/right_gripper_base>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R/right_gripper_mount/right_gripper_base/right_gripper_right_finger>
+            uniform token physics:axis = "X"
+            custom string urdf:jointType = "prismatic"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            float physics:lowerLimit = 0
+            float physics:upperLimit = 0.05
+            uniform token drive:linear:physics:type = "force"
+            float drive:linear:physics:damping = 8
+            point3f physics:localPos0 = (-0.07508, -0.026103, 0.109315)
+            custom point3f urdf:originXyz = (-0.07508, -0.026103, 0.109315)
+            custom quatf urdf:originQuatWxyz = (0.382675, 0.923859, 0.006101, 0.002527)
+            quatf physics:localRot0 = (0.382675, 0.923859, 0.006101, 0.002527)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+        def PhysicsFixedJoint "right_gripper_base_to_right_tool"
+        {
+            rel physics:body0 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R/right_gripper_mount/right_gripper_base>
+            rel physics:body1 = </marvin_robot/base_link/Base_R/Link1_R/Link2_R/Link3_R/Link4_R/Link5_R/Link6_R/Link7_R/flange_R/right_gripper_mount/right_gripper_base/right_tool>
+            custom string urdf:jointType = "fixed"
+            custom float3 urdf:axisLocal = (1, 0, 0)
+            point3f physics:localPos0 = (-0.011696, -0.034106, 0.100476)
+            custom point3f urdf:originXyz = (-0.011696, -0.034106, 0.100476)
+            custom quatf urdf:originQuatWxyz = (1, 0, 0, 0)
+            quatf physics:localRot0 = (1, 0, 0, 0)
+            point3f physics:localPos1 = (0, 0, 0)
+            quatf physics:localRot1 = (1, 0, 0, 0)
+        }
+    }
+}
+
