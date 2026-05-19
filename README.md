@@ -1,6 +1,6 @@
 # Tianji Marin Pro Embodiment 使用说明
 
-本文档说明如何在 RoboTwin 中使用公司双臂机器人 Marin Pro 进行仿真任务运行和数据采集。本仓库中该机器人以 `tianji` 作为 embodiment 名称注册，机器人资产位于 `assets/embodiments/tianji/`。
+本文档说明如何在 RoboTwin 中使用Tianji公司双臂机器人 Marin Pro 进行仿真任务运行和数据采集。本仓库中该机器人以 `tianji` 作为 embodiment 名称注册，机器人资产位于 `assets/embodiments/tianji/`。
 
 ## 目录内容
 
