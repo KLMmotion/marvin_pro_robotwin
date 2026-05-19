@@ -1,176 +1,215 @@
-<h1 align="center">
-  <a href="https://robotwin-benchmark.github.io"><b>RoboTwin</b> Bimanual Robotic Manipulation Platform<br></a>
-</h1>
-<h2 align="center">Lastest Version: RoboTwin 2.0<br>🤲 <a href="https://robotwin-platform.github.io/">Webpage</a> | <a href="https://robotwin-platform.github.io/doc/">Document</a> | <a href="https://arxiv.org/abs/2506.18088">Paper</a> | <a href="https://robotwin-platform.github.io/doc/community/index.html">Community</a> | <a href="https://robotwin-platform.github.io/leaderboard">Leaderboard</a></h2>
+# Tianji Marin Pro Embodiment 使用说明
 
-https://private-user-images.githubusercontent.com/88101805/463126988-e3ba1575-4411-4a36-ad65-f0b2f49890c3.mp4
+本文档说明如何在 RoboTwin 中使用公司双臂机器人 Marin Pro 进行仿真任务运行和数据采集。本仓库中该机器人以 `tianji` 作为 embodiment 名称注册，机器人资产位于 `assets/embodiments/tianji/`。
 
-**[2.0 Version (lastest)]** RoboTwin 2.0: A Scalable Data Generator and Benchmark with Strong Domain Randomization for Robust Bimanual Robotic Manipulation<br>
-<i>Under Review 2025</i>: [Webpage](https://robotwin-platform.github.io/) | [Document](https://robotwin-platform.github.io/doc) | [PDF](https://arxiv.org/pdf/2506.18088) | [arXiv](https://arxiv.org/abs/2506.18088) | [Talk (in Chinese)](https://www.bilibili.com/video/BV18p3izYE63/?spm_id_from=333.337.search-card.all.click) | [机器之心](https://mp.weixin.qq.com/s/SwORezmol2Qd9YdrGYchEA) | [Leaderboard](https://robotwin-platform.github.io/leaderboard)<br>
-> <a href="https://tianxingchen.github.io/">Tianxing Chen</a><sup>\*</sup>, Zanxin Chen<sup>\*</sup>, Baijun Chen<sup>\*</sup>, Zijian Cai<sup>\*</sup>, <a href="https://10-oasis-01.github.io">Yibin Liu</a><sup>\*</sup>, <a href="https://kolakivy.github.io/">Qiwei Liang</a>, Zixuan Li, Xianliang Lin, <a href="https://geyiheng.github.io">Yiheng Ge</a>, Zhenyu Gu, Weiliang Deng, Yubin Guo, Tian Nian, Xuanbing Xie, <a href="https://www.linkedin.com/in/yusen-qin-5b23345b/">Qiangyu Chen</a>, Kailun Su, Tianling Xu, <a href="http://luoping.me/">Guodong Liu</a>, <a href="https://aaron617.github.io/">Mengkang Hu</a>, <a href="https://c7w.tech/about">Huan-ang Gao</a>, Kaixuan Wang, <a href="https://liang-zx.github.io/">Zhixuan Liang</a>, <a href="https://www.linkedin.com/in/yusen-qin-5b23345b/">Yusen Qin</a>, Xiaokang Yang, <a href="http://luoping.me/">Ping Luo</a><sup>†</sup>, <a href="https://yaomarkmu.github.io/">Yao Mu</a><sup>†</sup>
+## 目录内容
 
-**[RoboTwin Dual-Arm Collaboration Challenge@CVPR'25 MEIS Workshop]** RoboTwin Dual-Arm Collaboration Challenge Technical Report at CVPR 2025 MEIS Workshop<br>
-Official Technical Report: [PDF](https://arxiv.org/pdf/2506.23351) | [arXiv](https://arxiv.org/abs/2506.23351) | [量子位](https://mp.weixin.qq.com/s/qxqs9vvvHsAJ-0hoYANYzQ)<br>
-
-**[1.0 Version]** RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins<br>
-Accepted to <i style="color: red; display: inline;"><b>CVPR 2025 (Highlight)</b></i>: [PDF](https://arxiv.org/pdf/2504.13059) | [arXiv](https://arxiv.org/abs/2504.13059)<br>
-> <a href="https://yaomarkmu.github.io/">Yao Mu</a><sup>* †</sup>, <a href="https://tianxingchen.github.io">Tianxing Chen</a><sup>* </sup>, Zanxin Chen<sup>* </sup>, <a href="https://shijiapeng03.github.io">Shijia Peng</a><sup>* </sup>, Zhiqian Lan, Zeyu Gao, Zhixuan Liang, Qiaojun Yu, Yude Zou, Mingkun Xu, Lunkai Lin, Zhiqiang Xie, Mingyu Ding, <a href="http://luoping.me/">Ping Luo</a><sup>†</sup>.
-
-**[Early Version]** RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins (early version)<br>
-Accepted to <i style="color: red; display: inline;"><b>ECCV Workshop 2024 (Best Paper Award)</b></i>: [PDF](https://arxiv.org/pdf/2409.02920) | [arXiv](https://arxiv.org/abs/2409.02920)<br>
-> <a href="https://yaomarkmu.github.io/">Yao Mu</a><sup>* †</sup>, <a href="https://tianxingchen.github.io">Tianxing Chen</a><sup>* </sup>, Shijia Peng<sup>*</sup>, Zanxin Chen<sup>*</sup>, Zeyu Gao, Zhiqian Lan, Yude Zou, Lunkai Lin, Zhiqiang Xie, <a href="http://luoping.me/">Ping Luo</a><sup>†</sup>.
-
-
-
-# 📚 Overview
-
-| Branch Name | Link |
-|-------------|------|
-| 2.0 Version Branch | [main](https://github.com/RoboTwin-Platform/RoboTwin/tree/main) (latest) |
-| IsaacLab-Arena Branch | [IsaacLab-Arena](https://github.com/RoboTwin-Platform/RoboTwin/tree/IsaacLab-Arena) |
-| RLinf Branch | [RLinf_support](https://github.com/RoboTwin-Platform/RoboTwin/tree/RLinf_support) |
-| WBCD 2026 Branch | [WBCD-2026](https://github.com/RoboTwin-Platform/RoboTwin/tree/WBCD-2026) |
-| 1.0 Version Branch | [1.0 Version](https://github.com/RoboTwin-Platform/RoboTwin/tree/RoboTwin-1.0) |
-| 1.0 Version Code Generation Branch | [1.0 Version GPT](https://github.com/RoboTwin-Platform/RoboTwin/tree/gpt) |
-| Early Version Branch | [Early Version](https://github.com/RoboTwin-Platform/RoboTwin/tree/early_version) |
-| 第十九届“挑战杯”人工智能专项赛分支 | [Challenge-Cup-2025](https://github.com/RoboTwin-Platform/RoboTwin/tree/Challenge-Cup-2025) |
-| CVPR 2025 Challenge Round 1 Branch | [CVPR-Challenge-2025-Round1](https://github.com/RoboTwin-Platform/RoboTwin/tree/CVPR-Challenge-2025-Round1) |
-| CVPR 2025 Challenge Round 2 Branch | [CVPR-Challenge-2025-Round2](https://github.com/RoboTwin-Platform/RoboTwin/tree/CVPR-Challenge-2025-Round2) |
-
-
-
-# 🐣 Update
-* **2026/03/03**, We release [RMBench](https://github.com/RoboTwin-Platform/RMBench), which is a memory-dependent manipulation benchmark built upon RoboTwin 2.0.
-* **2026/02/20**, Usage supported in <a href="https://github.com/starVLA/starVLA">StarVLA</a>, which is a user-friendly codebase for VLA development.
-* **2026/01/23**, We update IsaacLab-Arena and <a href="https://github.com/RLinf/RLinf">RLinf</a> support (contributed by RLinf team).
-* **2025/08/28**, We update the RoboTwin 2.0 Paper [PDF](https://arxiv.org/pdf/2506.18088).
-* **2025/08/25**, We fix ACT deployment code and update the [leaderboard](https://robotwin-platform.github.io/leaderboard).
-* **2025/08/06**, We release RoboTwin 2.0 Leaderboard: [leaderboard website](https://robotwin-platform.github.io/leaderboard).
-* **2025/07/23**, RoboTwin 2.0 received Outstanding Poster at ChinaSI 2025 (Ranking 1st).
-* **2025/07/19**, We Fix DP3 evaluation code error. We will update RoboTwin 2.0 paper next week.
-* **2025/07/09**, We update endpose control mode, please see [[RoboTwin Doc - Usage - Control Robot](https://robotwin-platform.github.io/doc/usage/control-robot.html)] for more details.
-* **2025/07/08**, We upload [Challenge-Cup-2025](https://github.com/RoboTwin-Platform/RoboTwin/tree/Challenge-Cup-2025) Branch (第十九届挑战杯分支).
-* **2025/07/02**, Fix Piper Wrist Bug [[issue](https://github.com/RoboTwin-Platform/RoboTwin/issues/104)]. Please redownload the embodiment asset.
-* **2025/07/01**, We release Technical Report of RoboTwin Dual-Arm Collaboration Challenge @ CVPR 2025 MEIS Workshop [[arXiv](https://arxiv.org/abs/2506.23351)] !
-* **2025/06/21**, We release RoboTwin 2.0 [[Webpage](https://robotwin-platform.github.io/)] !
-* **2025/04/11**, RoboTwin is seclected as <i>CVPR Highlight paper</i>!
-* **2025/02/27**, RoboTwin is accepted to <i>CVPR 2025</i> ! 
-* **2024/09/30**, RoboTwin (Early Version) received <i>the Best Paper Award  at the ECCV Workshop</i>!
-* **2024/09/20**, Officially released RoboTwin.
-
-# 🛠️ Installation
-
-See [RoboTwin 2.0 Document (Usage - Install & Download)](https://robotwin-platform.github.io/doc/usage/robotwin-install.html) for installation instructions. It takes about 20 minutes for installation.
-
-# 🤷‍♂️ Tasks Informations
-See [RoboTwin 2.0 Tasks Doc](https://robotwin-platform.github.io/doc/tasks/index.html) for more details.
-
-<p align="center">
-  <img src="./assets/files/50_tasks.gif" width="100%">
-</p>
-
-# 🧑🏻‍💻 Usage 
-
-## Document
-
-> Please Refer to [RoboTwin 2.0 Document (Usage)](https://robotwin-platform.github.io/doc/usage/index.html) for more details.
-
-## Data Collection
-We provide over 100,000 pre-collected trajectories as part of the open-source release [RoboTwin Dataset](https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main/dataset).
-However, we strongly recommend users to perform data collection themselves due to the high configurability and diversity of task and embodiment setups.
-
-<img src="./assets/files/domain_randomization.png" alt="description" style="display: block; margin: auto; width: 100%;">
-
-## 1. Task Running and Data Collection
-Running the following command will first search for a random seed for the target collection quantity, and then replay the seed to collect data.
-
-```
-bash collect_data.sh ${task_name} ${task_config} ${gpu_id}
-# Example: bash collect_data.sh beat_block_hammer demo_randomized 0
+```text
+assets/embodiments/tianji/
+├── config.yml                         # RoboTwin 读取的机器人主配置
+├── marvin_robot.urdf                  # SAPIEN / 运动学使用的 URDF
+├── marvin_moveit_config/              # MoveIt / SRDF 配置
+├── curobo_left_tmp.yml                # cuRobo 左臂路径模板
+├── curobo_right_tmp.yml               # cuRobo 右臂路径模板
+├── curobo_left.yml                    # 由模板生成的左臂 cuRobo 配置
+├── curobo_right.yml                   # 由模板生成的右臂 cuRobo 配置
+├── collision_left.yml                 # cuRobo 左臂碰撞球配置
+├── collision_right.yml                # cuRobo 右臂碰撞球配置
+├── meshes/                            # 机器人网格
+└── configuration/, *.usd, *.usda       # Isaac / USD 相关资产
 ```
 
-## 2. Modify Task Config
-☝️ See [RoboTwin 2.0 Tasks Configurations Doc](https://robotwin-platform.github.io/doc/usage/configurations.html) for more details.
+> 注意：文件名中保留了 `marvin_robot`，但在 RoboTwin 任务配置中使用的 embodiment 名称是 `tianji`。
 
-# 🚴‍♂️ Policy Baselines
-## Policies Support
-[DP](https://robotwin-platform.github.io/doc/usage/DP.html), [ACT](https://robotwin-platform.github.io/doc/usage/ACT.html), [DP3](https://robotwin-platform.github.io/doc/usage/DP3.html), [RDT](https://robotwin-platform.github.io/doc/usage/RDT.html), [PI0](https://robotwin-platform.github.io/doc/usage/Pi0.html), [OpenVLA-oft](https://robotwin-platform.github.io/doc/usage/OpenVLA-oft.html)
+## 1. 确认机器人已注册
 
-[TinyVLA](https://robotwin-platform.github.io/doc/usage/TinyVLA.html), [DexVLA](https://robotwin-platform.github.io/doc/usage/DexVLA.html) (Contributed by Media Group)
+RoboTwin 通过 `task_config/_embodiment_config.yml` 查找可用机器人。当前仓库已经包含如下注册项：
 
-[LLaVA-VLA](https://robotwin-platform.github.io/doc/usage/LLaVA-VLA.html) (Contributed by IRPN Lab, HKUST(GZ))
-
-[GO-1](https://robotwin-platform.github.io/doc/usage/GO1.html) (Contributed by GO-1 Team)
-
-Deploy Your Policy: [Guidance](https://robotwin-platform.github.io/doc/usage/deploy-your-policy.html)
-
-⏰ TODO: G3Flow, HybridVLA, SmolVLA, AVR, UniVLA
-
-# 🏄‍♂️ Experiment & LeaderBoard
-
-> We recommend that the RoboTwin Platform can be used to explore the following topics: 
-> 1. single - task fine - tuning capability
-> 2. visual robustness
-> 3. language diversity robustness (language condition)
-> 4. multi-tasks capability
-> 5. cross-embodiment performance
-
-The full leaderboard and setting can be found in: [https://robotwin-platform.github.io/leaderboard](https://robotwin-platform.github.io/leaderboard).
-
-# 💽 Pre-collected Large-scale Dataset
-
-Please refer to [RoboTwin 2.0 Dataset - Huggingface](https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main/dataset).
-
-# 👍 Citations
-If you find our work useful, please consider citing:
-
-<b>RoboTwin 2.0</b>: A Scalable Data Generator and Benchmark with Strong Domain Randomization for Robust Bimanual Robotic Manipulation
-```
-@article{chen2025robotwin,
-  title={Robotwin 2.0: A scalable data generator and benchmark with strong domain randomization for robust bimanual robotic manipulation},
-  author={Chen, Tianxing and Chen, Zanxin and Chen, Baijun and Cai, Zijian and Liu, Yibin and Li, Zixuan and Liang, Qiwei and Lin, Xianliang and Ge, Yiheng and Gu, Zhenyu and others},
-  journal={arXiv preprint arXiv:2506.18088},
-  year={2025}
-}
+```yaml
+tianji:
+  file_path: "./assets/embodiments/tianji"
 ```
 
-<b>RoboTwin</b>: Dual-Arm Robot Benchmark with Generative Digital Twins, accepted to <i style="color: red; display: inline;"><b>CVPR 2025 (Highlight)</b></i>
-```
-@InProceedings{Mu_2025_CVPR,
-    author    = {Mu, Yao and Chen, Tianxing and Chen, Zanxin and Peng, Shijia and Lan, Zhiqian and Gao, Zeyu and Liang, Zhixuan and Yu, Qiaojun and Zou, Yude and Xu, Mingkun and Lin, Lunkai and Xie, Zhiqiang and Ding, Mingyu and Luo, Ping},
-    title     = {RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins},
-    booktitle = {Proceedings of the Computer Vision and Pattern Recognition Conference (CVPR)},
-    month     = {June},
-    year      = {2025},
-    pages     = {27649-27660}
-}
+如果复制到新仓库或新分支，先确认该配置仍然存在。
+
+## 2. 首次运行前更新 cuRobo 绝对路径
+
+`curobo_left.yml` 和 `curobo_right.yml` 中需要写入当前机器上的仓库绝对路径。换机器、换目录或重新 clone 后，在仓库根目录执行：
+
+```bash
+python script/update_embodiment_config_path.py
 ```
 
-Benchmarking Generalizable Bimanual Manipulation: RoboTwin Dual-Arm Collaboration Challenge at CVPR 2025 MEIS Workshop
-```
-@article{chen2025benchmarking,
-  title={Benchmarking Generalizable Bimanual Manipulation: RoboTwin Dual-Arm Collaboration Challenge at CVPR 2025 MEIS Workshop},
-  author={Chen, Tianxing and Wang, Kaixuan and Yang, Zhaohui and Zhang, Yuhao and Chen, Zanxin and Chen, Baijun and Dong, Wanxi and Liu, Ziyuan and Chen, Dong and Yang, Tianshuo and others},
-  journal={arXiv preprint arXiv:2506.23351},
-  year={2025}
-}
-```
+该脚本会读取 `*_tmp.yml` 模板，把 `${ASSETS_PATH}` 替换为当前仓库路径，并生成对应的 `curobo_left.yml` / `curobo_right.yml`。生成后脚本会检查 URDF 和碰撞球配置是否存在。如果不执行这一步，cuRobo 可能仍指向旧机器路径，导致规划器找不到 URDF 或碰撞配置。
 
-<b>RoboTwin</b>: Dual-Arm Robot Benchmark with Generative Digital Twins (early version), accepted to <i style="color: red; display: inline;"><b>ECCV Workshop 2024 (Best Paper Award)</b></i>
-```
-@article{mu2024robotwin,
-  title={RoboTwin: Dual-Arm Robot Benchmark with Generative Digital Twins (early version)},
-  author={Mu, Yao and Chen, Tianxing and Peng, Shijia and Chen, Zanxin and Gao, Zeyu and Zou, Yude and Lin, Lunkai and Xie, Zhiqiang and Luo, Ping},
-  journal={arXiv preprint arXiv:2409.02920},
-  year={2024}
-}
+## 3. 选择使用 Tianji 机器人
+
+数据采集使用 `task_config/*.yml` 中的 `embodiment` 字段决定机器人。要使用 Marin Pro，将任务配置写成：
+
+```yaml
+embodiment:
+- tianji
 ```
 
-# 😺 Acknowledgement
+当前 `task_config/demo_randomized.yml` 已经配置为：
 
-**Software Support**: D-Robotics, **Hardware Support**: AgileX Robotics, **AIGC Support**: Deemos.
+```yaml
+render_freq: 0
+episode_num: 1500
+use_seed: false
+save_freq: 15
+need_topp: false
+embodiment:
+- tianji
+language_num: 100
+domain_randomization:
+  random_background: true
+  cluttered_table: true
+  clean_background_rate: 0.02
+  random_head_camera_dis: 0
+  random_table_height: 0.03
+  random_light: true
+  crazy_random_light_rate: 0.02
+camera:
+  head_camera_type: D435_Tianji_head
+  wrist_camera_type: D435_Tianji_wrist
+  collect_head_camera: true
+  collect_wrist_camera: true
+data_type:
+  rgb: true
+  third_view: false
+  depth: false
+  pointcloud: false
+  observer: false
+  endpose: true
+  qpos: true
+  mesh_segmentation: false
+  actor_segmentation: false
+pcd_down_sample_num: 1024
+pcd_crop: true
+save_path: ./data
+clear_cache_freq: 5
+collect_data: true
+eval_video_log: true
+```
 
-Contact [Tianxing Chen](https://tianxingchen.github.io) if you have any questions or suggestions.
+常用字段说明：
 
-# 🏷️ License
-This repository is released under the MIT license. See [LICENSE](./LICENSE) for additional details.
+- `episode_num`: 需要成功采集的 episode 数量。
+- `use_seed`: `false` 时先搜索成功 seed 并生成轨迹；`true` 时复用已有 `seed.txt`。
+- `collect_data`: 是否生成最终 HDF5 数据。
+- `camera`: 选择头部相机、腕部相机类型，以及是否采集对应图像。
+- `data_type`: 控制保存 RGB、深度、点云、末端位姿、关节动作等数据。
+- `domain_randomization`: 控制背景、光照、桌面杂物、桌高、头部相机位置扰动等随机化。
+
+## 4. 运行数据采集
+
+在仓库根目录执行：
+
+```bash
+bash collect_data.sh <task_name> <task_config_name> <gpu_id>
+```
+
+示例：
+
+```bash
+bash collect_data.sh beat_block_hammer demo_randomized 0
+```
+
+参数含义：
+
+- `task_name`: 任务名，对应 `envs/<task_name>.py`，例如 `beat_block_hammer`、`move_can_pot`、`stack_blocks_two`。
+- `task_config_name`: 配置文件名，不包含 `.yml` 后缀，例如 `demo_randomized`。
+- `gpu_id`: 使用的 GPU 编号，会写入 `CUDA_VISIBLE_DEVICES`。
+
+采集流程分两步：
+
+1. 搜索能够成功完成任务的随机 seed，并在 `_traj_data/` 中保存规划轨迹。
+2. 复用成功 seed 回放轨迹，保存 HDF5、视频、场景信息和语言指令。
+
+## 5. 数据输出位置
+
+以上示例会输出到：
+
+```text
+data/beat_block_hammer/demo_randomized/
+├── _traj_data/              # 规划阶段保存的轨迹 pkl
+├── data/                    # 最终 episodeN.hdf5 数据
+├── video/                   # 可视化视频
+├── instructions/            # episode 语言指令
+├── seed.txt                 # 成功 seed 列表
+└── scene_info.json          # 每个 episode 的场景信息
+```
+
+单个 HDF5 通常包含：
+
+```text
+endpose/
+joint_action/
+observation/head_camera/
+observation/left_camera/
+observation/right_camera/
+pointcloud
+```
+
+其中 `joint_action/vector` 为双臂关节与夹爪动作拼接结果，`observation/*/rgb` 为编码后的相机图像，`observation/*/intrinsic_cv` 和 `observation/*/extrinsic_cv` 为相机内外参。
+
+## 6. 机器人关键配置
+
+`assets/embodiments/tianji/config.yml` 是 RoboTwin 加载 Marin Pro 的主入口，重点字段如下：
+
+- `urdf_path`: 当前使用 `./marvin_robot.urdf`。
+- `srdf_path`: 当前使用 `./marvin_moveit_config/config/marvin_robot.srdf`。
+- `planner`: 当前为 `curobo`。
+- `dual_arm`: 当前为 `True`，表示单个 URDF 中包含双臂。
+- `arm_joints_name`: 左右臂各 7 个关节名称。
+- `move_group`: 左右末端 link，当前为 `left_tool`、`right_tool`。
+- `gripper_name`: 左右夹爪主关节及 mimic 关节。
+- `homestate`: 双臂初始关节姿态。
+- `robot_pose`: 机器人在场景中的根位姿。
+- `wrist_camera_pose`: 腕部相机相对末端的位姿。
+- `static_camera_list`: 静态头部相机位姿，当前包含 `head_camera`。
+- `disable_collision_pairs`: 需要在 SAPIEN 中忽略碰撞的局部 link 对。
+
+如果调整 URDF、相机、夹爪或末端 link，请同步检查 `config.yml`、`curobo_left_tmp.yml`、`curobo_right_tmp.yml`、`collision_left.yml` 和 `collision_right.yml`。
+
+## 7. 常见问题
+
+### cuRobo 报 URDF 或 collision 配置找不到
+
+通常是 `curobo_left.yml` / `curobo_right.yml` 中仍是旧机器的绝对路径。重新执行：
+
+```bash
+python script/update_embodiment_config_path.py
+```
+
+### 修改任务配置后没有生效
+
+运行命令中的第二个参数是配置名，不带 `.yml`。例如配置文件是 `task_config/demo_randomized.yml`，命令应写：
+
+```bash
+bash collect_data.sh beat_block_hammer demo_randomized 0
+```
+
+### 想快速测试流程
+
+先把目标配置中的 `episode_num` 改小，例如 `1` 或 `2`，确认 seed 搜索、轨迹回放、HDF5 输出都正常后，再扩大采集规模。
+
+### 想复用已有成功 seed
+
+保留 `data/<task>/<config>/seed.txt`，并在任务配置中设置：
+
+```yaml
+use_seed: true
+```
+
+这样会跳过 seed 搜索，直接根据已有 seed 回放采集数据。
+
+## 8. 推荐采集顺序
+
+1. 确认 `task_config/_embodiment_config.yml` 中存在 `tianji`。
+2. 执行 `python script/update_embodiment_config_path.py` 更新本机路径。
+3. 复制或修改一个任务配置，将 `embodiment` 设置为 `tianji`。
+4. 先用少量 `episode_num` 试跑目标任务。
+5. 检查 `data/<task>/<config>/data/episode0.hdf5`、`video/` 和 `scene_info.json`。
+6. 扩大 `episode_num`，正式批量采集。
