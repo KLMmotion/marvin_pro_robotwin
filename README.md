@@ -21,6 +21,12 @@ assets/embodiments/tianji/
 
 > 注意：文件名中保留了 `marvin_robot`，但在 RoboTwin 任务配置中使用的 embodiment 名称是 `tianji`。
 
+## 0. 安装 RoboTwin 环境
+
+在使用 Tianji / Marin Pro 机器人配置前，需要先按照 RoboTwin 官方教程完成基础环境、依赖和资产安装。具体可参考 RoboTwin 2.0 官方文档的 Install & Download 页面：
+
+https://robotwin-platform.github.io/doc/usage/robotwin-install.html
+
 ## 1. 确认机器人已注册
 
 RoboTwin 通过 `task_config/_embodiment_config.yml` 查找可用机器人。当前仓库已经包含如下注册项：
@@ -29,8 +35,8 @@ RoboTwin 通过 `task_config/_embodiment_config.yml` 查找可用机器人。当
 tianji:
   file_path: "./assets/embodiments/tianji"
 ```
-
-如果复制到新仓库或新分支，先确认该配置仍然存在。
+如果直接clone该仓库，则`task_config/_embodiment_config.yml`中已经存在该注册项。
+如果复制的是RoboTwin官方仓库，则不存在上述注册项，请往‘task_config/_embodiment_config.yml’中手动添加上述字段。
 
 ## 2. 首次运行前更新 cuRobo 绝对路径
 
@@ -44,7 +50,7 @@ python script/update_embodiment_config_path.py
 
 ## 3. 选择使用 Tianji 机器人
 
-数据采集使用 `task_config/*.yml` 中的 `embodiment` 字段决定机器人。要使用 Marin Pro，将任务配置写成：
+数据采集使用 `task_config/_embodiment_config.yml` 中的 `embodiment` 字段决定机器人。要使用 Marin Pro，将任务配置写成：
 
 ```yaml
 embodiment:
