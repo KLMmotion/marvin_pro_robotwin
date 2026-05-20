@@ -607,7 +607,7 @@
     <child link="Link1_L" />
     <origin xyz="0 0 0.1745" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit lower="-3.1067" upper="3.1067" effort="108" velocity="10" />
+    <limit lower="-3.1067" upper="3.1067" effort="108" velocity="2" />
     <dynamics damping="3" friction="0.3" />
   </joint>
 
@@ -616,7 +616,7 @@
     <child link="Link2_L" />
     <origin xyz="0 0 0" rpy="1.5708006 0 0" />
     <axis xyz="0 0 1" />
-    <limit lower="-2.0944" upper="-0.1" effort="108" velocity="10" />
+    <limit lower="-2.0944" upper="-0.1" effort="108" velocity="2" />
     <dynamics damping="3" friction="0.3" />
   </joint>
 
@@ -625,7 +625,7 @@
     <child link="Link3_L" />
     <origin xyz="0 0.287 0" rpy="-1.5708006 0 0" />
     <axis xyz="0 0 1" />
-    <limit lower="-3.1067" upper="3.1067" effort="66" velocity="10" />
+    <limit lower="-3.1067" upper="3.1067" effort="66" velocity="2" />
     <dynamics damping="2.5" friction="0.25" />
   </joint>
 
@@ -634,7 +634,7 @@
     <child link="Link4_L" />
     <origin xyz="0.018 0 0" rpy="-1.5708006 0 -3.1415853" />
     <axis xyz="0 0 1" />
-    <limit lower="-2.5307" upper="-0.1" effort="66" velocity="10" />
+    <limit lower="-2.5307" upper="-0.1" effort="66" velocity="2" />
     <dynamics damping="2.5" friction="0.25" />
   </joint>
 
@@ -643,7 +643,7 @@
     <child link="Link5_L" />
     <origin xyz="0.018 -0.314 0" rpy="-1.5708006 0 -3.1415853" />
     <axis xyz="0 0 1" />
-    <limit lower="-3.1067" upper="3.1067" effort="18" velocity="10" />
+    <limit lower="-3.1067" upper="3.1067" effort="18" velocity="2" />
     <dynamics damping="1.5" friction="0.15" />
   </joint>
 
@@ -652,7 +652,7 @@
     <child link="Link6_L" />
     <origin xyz="0 0 0" rpy="0 -1.5707923 1.5708003" />
     <axis xyz="0 0 1" />
-    <limit lower="-1.0472" upper="1.0472" effort="18" velocity="10" />
+    <limit lower="-1.0472" upper="1.0472" effort="18" velocity="2" />
     <dynamics damping="1.2" friction="0.12" />
   </joint>
 
@@ -661,7 +661,7 @@
     <child link="Link7_L" />
     <origin xyz="0 0 0" rpy="0 -1.5707923 1.5708003" />
     <axis xyz="0 0 1" />
-    <limit lower="-1.5708" upper="1.5708" effort="18" velocity="10" />
+    <limit lower="-1.5708" upper="1.5708" effort="18" velocity="2" />
     <dynamics damping="1.2" friction="0.1" />
   </joint>
 
@@ -688,7 +688,7 @@
     <child link="left_gripper_left_finger" />
     <origin xyz="0.0516878 -0.0421084 0.0916374" rpy="0.7853982 0 -3.1283863" />
     <axis xyz="1 0 0" />
-    <limit lower="0" upper="0.05" effort="30" velocity="10" />
+    <limit lower="0" upper="0.05" effort="30" velocity="2" />
     <dynamics damping="8" friction="0.2" />
   </joint>
 
@@ -697,7 +697,7 @@
     <child link="left_gripper_right_finger" />
     <origin xyz="-0.07508 -0.0261034 0.1093149" rpy="2.3561945 0.0000001 0.0132065" />
     <axis xyz="1 0 0" />
-    <limit lower="0" upper="0.05" effort="0" velocity="10" />
+    <limit lower="0" upper="0.05" effort="0" velocity="2" />
     <dynamics damping="8" friction="0.2" />
     <mimic joint="left_gripper_left_finger_joint" multiplier="1" offset="0" />
   </joint>
@@ -725,7 +725,7 @@
     <child link="Link1_R" />
     <origin xyz="0 0 0.1745" rpy="0 0 0" />
     <axis xyz="0 0 1" />
-    <limit lower="-3.1067" upper="3.1067" effort="108" velocity="10" />
+    <limit lower="-3.1067" upper="3.1067" effort="108" velocity="2" />
     <dynamics damping="3" friction="0.3" />
   </joint>
 
@@ -734,7 +734,7 @@
     <child link="Link2_R" />
     <origin xyz="0 0 0" rpy="1.5708006 0 0" />
     <axis xyz="0 0 1" />
-    <limit lower="-2.0944" upper="-0.1" effort="108" velocity="10" />
+    <limit lower="-2.0944" upper="-0.1" effort="108" velocity="2" />
     <dynamics damping="3" friction="0.3" />
   </joint>
 
@@ -743,7 +743,7 @@
     <child link="Link3_R" />
     <origin xyz="0 0.287 0" rpy="-1.5708006 0 0" />
     <axis xyz="0 0 1" />
-    <limit lower="-3.1067" upper="3.1067" effort="66" velocity="10" />
+    <limit lower="-3.1067" upper="3.1067" effort="66" velocity="2" />
     <dynamics damping="2.5" friction="0.25" />
   </joint>
 
@@ -752,7 +752,7 @@
     <child link="Link4_R" />
     <origin xyz="0.018 0 0" rpy="-1.5708006 0 -3.1415853" />
     <axis xyz="0 0 1" />
-    <limit lower="-2.5307" upper="-0.1" effort="66" velocity="10" />
+    <limit lower="-2.5307" upper="-0.1" effort="66" velocity="2" />
     <dynamics damping="2.5" friction="0.25" />
   </joint>
 
@@ -761,7 +761,7 @@
     <child link="Link5_R" />
     <origin xyz="0.018 -0.314 0" rpy="-1.5708006 0 -3.1415853" />
     <axis xyz="0 0 1" />
-    <limit lower="-3.1067" upper="3.1067" effort="18" velocity="10" />
+    <limit lower="-3.1067" upper="3.1067" effort="18" velocity="2" />
     <dynamics damping="1.5" friction="0.15" />
   </joint>
 
@@ -770,7 +770,7 @@
     <child link="Link6_R" />
     <origin xyz="0 0 0" rpy="0 -1.5707923 1.5708003" />
     <axis xyz="0 0 1" />
-    <limit lower="-1.0472" upper="1.0472" effort="18" velocity="10" />
+    <limit lower="-1.0472" upper="1.0472" effort="18" velocity="2" />
     <dynamics damping="1.2" friction="0.12" />
   </joint>
 
@@ -779,7 +779,7 @@
     <child link="Link7_R" />
     <origin xyz="0 0 0" rpy="0 -1.5707923 1.5708003" />
     <axis xyz="0 0 1" />
-    <limit lower="-1.5708" upper="1.5708" effort="18" velocity="10" />
+    <limit lower="-1.5708" upper="1.5708" effort="18" velocity="2" />
     <dynamics damping="1.2" friction="0.1" />
   </joint>
 
