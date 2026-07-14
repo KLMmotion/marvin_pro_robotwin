@@ -2,6 +2,35 @@
 
 本文档说明如何在 RoboTwin 中使用Tianji公司双臂机器人 Marin Pro 进行仿真任务运行和数据采集。本仓库中该机器人以 `tianji` 作为 embodiment 名称注册，机器人资产位于 `assets/embodiments/tianji/`。
 
+## 任务数据生成成功率
+
+已采集任务的官方 vs 实测成功率对比见：[docs/task_success_rate_comparison.md](docs/task_success_rate_comparison.md)。
+
+原始数据托管在 Hugging Face：
+
+- Dataset: [Continuity3/marvin_pro_robotwin](https://huggingface.co/datasets/Continuity3/marvin_pro_robotwin)
+- 数据路径：[`data/`](https://huggingface.co/datasets/Continuity3/marvin_pro_robotwin/tree/main/data)
+
+| Task | 官方 (Aloha-AgileX) | 我们实测 (Tianji) |
+| --- | ---: | ---: |
+| adjust_bottle | 93% | 93% |
+| beat_block_hammer | 64% | 71% |
+| click_alarmclock | 92% | 88% |
+| grab_roller | 95% | 91% |
+| lift_pot | 27% | 34% |
+| move_playingcard_away | 99% | 95% |
+| move_stapler_pad | 92% | 92% |
+| open_laptop | 82% | 87% |
+| place_burger_fries | 97% | 93% |
+| place_container_plate | 89% | 89% |
+| place_empty_cup | 92% | 96% |
+| place_object_scale | 78% | 84% |
+| place_object_stand | 97% | 94% |
+| place_phone_stand | 66% | 73% |
+| press_stapler | 98% | 98% |
+| shake_bottle | 89% | 85% |
+| shake_bottle_horizontally | 90% | 90% |
+
 ## 目录内容
 
 ```text
